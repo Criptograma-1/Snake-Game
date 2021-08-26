@@ -41,17 +41,21 @@ export default class Snake {
     console.log(event);
     switch(event.keyCode) {
       case 37://left
-      this.direction = Phaser.Math.Vector2.LEFT;
-        break;
+      if(this.direction !== Phaser.Math.Vector2.RIGHT)
+        this.direction = Phaser.Math.Vector2.LEFT;
+      break;
       case 38://up
-      this.direction = Phaser.Math.Vector2.UP;
-        break;
+      if(this.direction !== Phaser.Math.Vector2.DOWN)
+        this.direction = Phaser.Math.Vector2.UP;
+      break;
       case 39://right
-      this.direction = Phaser.Math.Vector2.RIGHT;
-        break;
+      if(this.direction !== Phaser.Math.Vector2.LEFT)
+        this.direction = Phaser.Math.Vector2.RIGHT;
+      break;
       case 40://down
-      this.direction = Phaser.Math.Vector2.DOWN;
-        break;
+      if(this.direction !== Phaser.Math.Vector2.UP)
+        this.direction = Phaser.Math.Vector2.DOWN;
+      break;
     }
   }
 
