@@ -3,23 +3,38 @@ export default class Snake {
     this.scene = scene;
     this.lastMoveTime = 0;
     this.moveInterval = 500;
+    this.tileSize = 16;
     this.direction = Phaser.Math.Vector2.LEFT;
     this.body = [];
     this.body.push(
-      this.scene.add.rectangle(100,100,16,16,0x00ff00).setOrigin(0)
+      this.scene.add
+        .rectangle(
+          this.scene.game.config.width / 2,
+          this.scene.game.config.height / 2, 
+          this.tileSize, 
+          this.tileSize,
+          0x00ff00
+        )
+        .setOrigin(0)
       );
-    this.body.push(
-      this.scene.add.rectangle(0,0,16,16,0xffff00).setOrigin(0)
-      );
-    this.body.push(
-      this.scene.add.rectangle(0,0,16,16,0x0000ff).setOrigin(0)
-      );
-    this.body.push(
-      this.scene.add.rectangle(0,0,16,16,0xffffff).setOrigin(0)
-      );
+    this.apple = this.scene.add
+      .rectangle(0,0,this.tileSize,this.tileSize,0xff0000)
+      .setOrigin(0);
+    this.positionApple();
     scene.input.keyboard.on('keydown', e => {
       this.keydown(e);
     });
+  }
+
+  positionApple() {
+    this.apple.x = 
+      Math.floor(
+        (Math.random() * this.scene.game.config.width) / this.tileSize
+      ) * this.tileSize;
+    this.apple.y = 
+      Math.floor(
+        (Math.random() * this.scene.game.config.height) / this.tileSize
+      ) * this.tileSize;
   }
 
   keydown(event) {
