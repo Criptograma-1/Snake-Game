@@ -54,6 +54,8 @@ $ node index.js
 
 ```
 
+---
+
 ## 🛠 Tecnologias
 
 As seguintes ferramentas/linguagens foram usadas na construção do projeto:
@@ -62,6 +64,8 @@ As seguintes ferramentas/linguagens foram usadas na construção do projeto:
 - HTML
 - Express
 - Phaser cdnjs (arcade-physics)
+
+---
 
 ## 🦸 Autora
 
@@ -72,6 +76,7 @@ As seguintes ferramentas/linguagens foram usadas na construção do projeto:
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/81261737?v=4" width="100px;" alt=""/>
  <br />
 
+---
 
 ## 📝 Licença
 
